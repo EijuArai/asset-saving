@@ -23,7 +23,7 @@ public class CancelTest {
     }
 
     static private final MockServices ledgerServices = new MockServices(
-            Arrays.asList("com.template.contracts")
+            Arrays.asList("com.assetsaving.contracts")
     );
 
     @Test

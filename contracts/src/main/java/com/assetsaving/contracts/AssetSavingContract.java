@@ -19,7 +19,7 @@ import static net.corda.core.contracts.ContractsDSL.requireSingleCommand;
 import static net.corda.core.contracts.ContractsDSL.requireThat;
 
 public class AssetSavingContract implements Contract {
-    public static final String ID = "com.template.contracts.AssetSavingContract";
+    public static final String ID = "com.assetsaving.contracts.AssetSavingContract";
 
     @Override
     public void verify(LedgerTransaction tx) {
