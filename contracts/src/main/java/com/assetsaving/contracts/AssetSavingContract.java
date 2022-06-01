@@ -146,13 +146,6 @@ public class AssetSavingContract implements Contract {
                 List<PublicKey> arrayOfSigners = tx.getCommands().get(0).getSigners();
                 Set<PublicKey> setOfSigners = new HashSet<PublicKey>(arrayOfSigners);
 
-
-//                List<AbstractParty> participants = tx.getOutputStates().get(0).getParticipants();
-//                HashSet<PublicKey> participantKeys = new HashSet<>();
-//                for (AbstractParty party : participants) {
-//                    participantKeys.add(party.getOwningKey());
-//                }
-
                 require.using("Both bank and customer together only may sign the AssetSaving cancel transaction.",
                         setOfSigners.equals(listOfParticipantPublicKeys) && signersSet.size() == 2);
 
