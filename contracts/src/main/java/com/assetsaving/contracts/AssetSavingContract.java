@@ -125,8 +125,6 @@ public class AssetSavingContract implements Contract {
 
                 return null;
             });
-        } else if (commandData instanceof AssetSavingContract.Commands.Accumulate) {
-            // Implement if you can afford it.
         } else if (commandData instanceof AssetSavingContract.Commands.Cancel) {
             requireThat(require -> {
                 require.using("Only one input state should be consumed when cancel an AssetSaving.",
@@ -171,9 +169,6 @@ public class AssetSavingContract implements Contract {
         }
 
         class Transfer implements Commands {
-        }
-
-        class Accumulate implements Commands {
         }
 
         class Cancel implements Commands {
