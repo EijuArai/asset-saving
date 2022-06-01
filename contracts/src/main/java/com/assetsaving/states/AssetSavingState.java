@@ -17,7 +17,7 @@ import java.util.List;
 @BelongsToContract(AssetSavingContract.class)
 public class AssetSavingState implements ContractState, LinearState {
 
-    //private variables
+    // private variables
     private final Party bank;
     private final AnonymousParty customer;
     private final Date startDate;
@@ -42,7 +42,7 @@ public class AssetSavingState implements ContractState, LinearState {
         this.linearId = new UniqueIdentifier();
     }
 
-    //getters
+    // getters
     public Party getBank() {
         return bank;
     }
