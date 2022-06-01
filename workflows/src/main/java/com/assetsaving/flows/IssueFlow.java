@@ -46,7 +46,7 @@ public class IssueFlow {
         @Suspendable
         @Override
         public SignedTransaction call() throws FlowException {
-            // Generate accountinfo & AnonymousParty object for transaction.
+            // Generate accountInfo & AnonymousParty object for transaction.
             final StateAndRef<AccountInfo> accountStateRef = (StateAndRef<AccountInfo>) subFlow(new CreateAccount(customer));
             final AnonymousParty customerAccount = subFlow(new RequestKeyForAccount(
                     accountStateRef.getState().getData()));
