@@ -125,8 +125,6 @@ public class AssetSavingContract implements Contract {
 
                 return null;
             });
-        } else if (commandData instanceof AssetSavingContract.Commands.Accumulate) {
-            // Implement if you can afford it.
         } else if (commandData instanceof AssetSavingContract.Commands.Cancel) {
             requireThat(require -> {
                 require.using("Only one input state should be consumed when cancel an AssetSaving.",
@@ -148,13 +146,6 @@ public class AssetSavingContract implements Contract {
                 List<PublicKey> arrayOfSigners = tx.getCommands().get(0).getSigners();
                 Set<PublicKey> setOfSigners = new HashSet<PublicKey>(arrayOfSigners);
 
-
-//                List<AbstractParty> participants = tx.getOutputStates().get(0).getParticipants();
-//                HashSet<PublicKey> participantKeys = new HashSet<>();
-//                for (AbstractParty party : participants) {
-//                    participantKeys.add(party.getOwningKey());
-//                }
-
                 require.using("Both bank and customer together only may sign the AssetSaving cancel transaction.",
                         setOfSigners.equals(listOfParticipantPublicKeys) && signersSet.size() == 2);
 
@@ -171,9 +162,6 @@ public class AssetSavingContract implements Contract {
         }
 
         class Transfer implements Commands {
-        }
-
-        class Accumulate implements Commands {
         }
 
         class Cancel implements Commands {
