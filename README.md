@@ -1,1 +1,1 @@
-# Sample CorDapp for asset savings.
+# Sample Asset Saving CorDapp.
